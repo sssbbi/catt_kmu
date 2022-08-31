@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@mixin dimmed($dimmed-bg-color: rgba(#000, 0.5)) {
+  &:after {
+    content: '';
+    position: absolute;
+    background: $dimmed-bg-color;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

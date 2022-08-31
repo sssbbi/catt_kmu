@@ -1,0 +1,387 @@
+@charset "UTF-8";
+
+//댓글
+$point: $mc;
+
+.txt_post_wrap {
+  &.type_a {
+    margin-top: 40px;
+    padding: 20px 30px;
+    border: 1px solid #999;
+
+    @include mdq-max(lg) {
+      margin-top: 30px;
+      padding: 15px 15px;
+    }
+
+    .name_box {
+      margin-top: 10px;
+      position: relative;
+      padding-left: 70px;
+      max-width: 200px;
+
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .post_list {
+      margin-top: 30px;
+
+      li {
+        position: relative;
+        padding: 15px 0;
+        border-top: 1px solid #ccc;
+
+        .btn_del {
+          position: absolute;
+          top: 15px;
+          right: 0;
+          display: inline-block;
+          height: 28px;
+          line-height: 28px;
+          border: 1px solid #333;
+          color: #333;
+          width: 50px;
+          font-size: 13px;
+          text-align: center;
+        }
+
+        .name_01 {
+          font-size: 16px;
+          font-weight: 500;
+          color: #666;
+        }
+
+        .date_01 {
+          font-size: 13px;
+          font-weight: 500;
+          color: #999;
+        }
+
+        .des_txt {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .write_box {
+      table {
+        width: 100%;
+
+        .col_w {
+          width: 80px;
+
+          @include mdq-max(lg) {
+            width: 40px;
+          }
+        }
+
+        .col_w2 {
+          width: 90px;
+
+          @include mdq-max(lg) {
+            width: 60px;
+          }
+        }
+
+        th {
+          color: #222;
+          font-weight: bold;
+          text-align: left;
+          text-indent: 8px;
+        }
+      }
+
+      .txt_num {
+        i {
+          color: $point;
+          margin-right: 5px;
+        }
+      }
+
+      .write_area {
+        position: relative;
+        margin-top: 10px;
+        padding-right: 140px;
+
+        textarea {
+          width: 98%;
+          padding: 10px 1%;
+          height: 50px;
+          min-height: 50px;
+        }
+
+        .btn_submit {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: inline-block;
+          height: 72px;
+          line-height: 72px;
+          text-align: center;
+          width: 140px;
+          background: #777;
+          font-size: 17px;
+          color: #fff;
+        }
+
+        @include mdq-max(lg) {
+          padding-right: 0;
+
+          .btn_submit {
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            font-size: 15px;
+            position: static;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &.type_b {
+    margin-top: 20px;
+
+    .right {
+      float: right;
+    }
+
+    .left {
+      float: left;
+    }
+
+    .list_box {
+      margin-top: 20px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .post_list li {
+      position: relative;
+      border-top: 1px solid #e8e8e8;
+
+      &.post_li .inner {
+        padding: 15px 15px;
+      }
+
+      .answer_box {
+        display: none;
+
+        .inner {
+          position: relative;
+          padding: 15px 15px 15px 40px;
+
+          i {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 12px;
+            height: 15px;
+            background: url(../images/icon/reply.png) no-repeat;
+          }
+
+          .area-type-form {
+            height: 35px;
+            min-height: 35px;
+            width: 100%;
+            padding: 7px;
+            box-sizing: border-box;
+          }
+
+          .des_txt.write_txt {
+            position: relative;
+            padding-right: 95px;
+          }
+
+          .btn_write {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            width: 80px;
+            background: $point;
+            color: #fff;
+          }
+
+          .btn_censel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            height: 72px;
+            line-height: 72px;
+            text-align: center;
+            width: 72px;
+            background: #999;
+            color: #fff;
+          }
+        }
+      }
+
+      .name_01 {
+        font-weight: 500;
+        color: #000;
+        padding-right: 10px;
+        border-right: 1px solid #ddd;
+      }
+
+      .date_01 {
+        font-size: 13px;
+        font-weight: 700;
+        color: #999;
+      }
+
+      .des_txt {
+        margin-top: 10px;
+        font-size: 13px;
+      }
+    }
+
+    .txt_num {
+      i,
+      img {
+        vertical-align: middle;
+        color: $point;
+        margin-right: 5px;
+      }
+    }
+
+    .write_box .write_area {
+      position: relative;
+      $btn: 200px;
+      padding-right: $btn + 10px;
+
+      &._disable {
+        textarea {
+          background-color: #f8f8f8;
+        }
+
+        .btn_submit {
+          background-color: #b7b8c3;
+          cursor: default;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        height: 80px;
+        min-height: 80px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        font-size: 14px;
+      }
+
+      .btn_submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        width: $btn;
+        background: $point;
+        font-size: 15px;
+        color: #fff;
+      }
+
+      .btn_submit_02 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        width: 80px;
+        background: #8c8c8c;
+        font-size: 15px;
+        color: #fff;
+      }
+
+      @include mdq-max(lg) {
+        padding-right: 0;
+
+        .btn_submit {
+          height: 40px;
+          line-height: 40px;
+          font-size: 15px;
+          margin-top: 10px;
+          position: static;
+          width: 100%;
+        }
+      }
+    }
+
+    .btn_answer {
+      display: inline-block;
+      height: 24px;
+      line-height: 24px;
+      color: #fff;
+      background: $point;
+      width: 50px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .btn_del {
+      font-size: 13px;
+      color: #f1281b;
+      padding: 0 10px;
+    }
+
+    .btn_modify {
+      position: relative;
+      font-size: 13px;
+      color: #000;
+      padding: 0 10px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 10px;
+        margin-top: -5px;
+        border-left: 1px solid #ddd;
+      }
+    }
+
+    .modify_box {
+      margin-top: 10px;
+      display: none;
+      position: relative;
+      padding-right: 95px;
+
+      textarea {
+        height: 80px;
+        min-height: 80px;
+        width: 100%;
+        padding: 7px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+      }
+
+      a {
+        position: absolute;
+        bottom: 7px;
+        right: 0;
+        display: inline-block;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        width: 80px;
+        background: $point;
+        color: #fff;
+      }
+    }
+  }
+}

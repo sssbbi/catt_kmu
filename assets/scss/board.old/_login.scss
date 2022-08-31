@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+///* 로그인, 계정찾기*/
+.login_con {
+  .login_wrap {
+    max-width: 430px;
+    margin: 0 auto;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+
+    .login_list li {
+      margin-top: 10px;
+
+      input {
+        height: 50px;
+        line-height: 50px;
+
+        &.btn_login {
+          width: 100%;
+          display: inline-block;
+          height: 50px;
+          line-height: 50px;
+          background: #fff;
+          color: #666;
+          line-height: 1.5;
+          cursor: pointer;
+          font-size: 16px;
+          border: 1px solid #000;
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+
+    .bot_sec {
+      margin-top: 20px;
+
+      .tit {
+        margin-bottom: 10px;
+      }
+
+      a {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        height: 45px;
+        line-height: 45px;
+      }
+    }
+  }
+
+  .tab-wrap {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+
+    .tab li {
+      float: left;
+      width: 50%;
+      margin: 0 auto;
+
+      a {
+        display: block;
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 18px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          width: 0;
+          border-top: 2px solid #000;
+          transition: 0.3s;
+        }
+
+        &.on {
+          color: #6a635b;
+
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.num {
+  display: table;
+  vertical-align: middle;
+  width: 100%;
+
+  // max-width: 500px;
+  li {
+    input {
+      width: 100%;
+    }
+
+    display: table-cell;
+    width: 33.3333%;
+    padding-left: 10px;
+
+    &:before {
+      float: left;
+      width: 10px;
+      // line-height: 40px;
+      margin-left: -10px;
+      color: #444;
+      text-align: center;
+      content: '-';
+      line-height: $input-height;
+
+      @include mdq-max(lg) {
+        line-height: $input-height-lg;
+      }
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.e_mail_box {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  .mail_txt,
+  .mail_txt2,
+  .mail_sel {
+    display: table-cell;
+    width: 31.333%;
+    vertical-align: middle;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .mail_a {
+    display: table-cell;
+    width: 4%;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .mail_sel {
+    padding-left: 10px;
+
+    &:before {
+      float: left;
+      width: 10px;
+      line-height: 28px;
+      margin-left: -10px;
+      text-align: center;
+      content: '';
+    }
+  }
+}
+
+.id_num {
+  display: table;
+  vertical-align: middle;
+  width: 100%;
+
+  li {
+    display: table-cell;
+    width: 50%;
+    padding-left: 10px;
+
+    &:before {
+      float: left;
+      width: 10px;
+      line-height: 40px;
+      margin-left: -10px;
+      color: #444;
+      text-align: center;
+      content: '-';
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.area_select {
+  display: table;
+  vertical-align: middle;
+  width: 100%;
+
+  li {
+    display: table-cell;
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  &.txt3 li {
+    display: table-cell;
+    width: 33.333%;
+    padding-left: 10px;
+  }
+
+  li {
+    &:first-child {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &:before {
+      float: left;
+      width: 10px;
+      line-height: 28px;
+      margin-left: -10px;
+      text-align: center;
+      content: '';
+    }
+  }
+}
+
+$red: rgb(255, 71, 71);
+$blue: rgb(67, 67, 255);
+
+.calendar_wrap_a {
+  position: relative;
+
+  .term_data {
+    position: absolute;
+    top: 20px;
+    left: 0;
+
+    .tit {
+      font-size: 17px;
+      color: #333;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+  }
+
+  .btn_date_wr {
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
+
+  .control_bx {
+    position: relative;
+    margin: 0 auto 10px;
+    text-align: center;
+
+    .year {
+      color: $mc; //#26488c;
+      font-weight: bold;
+      font-size: 45px;
+      padding: 0 15px;
+      vertical-align: middle;
+      display: inline-block;
+
+      @include mdq-max(sm) {
+        font-size: 26px;
+      }
+    }
+
+    .btn_prev_month {
+      font-size: 40px;
+      color: #333;
+      display: inline-block;
+      vertical-align: middle;
+
+      i {
+        vertical-align: middle;
+      }
+
+      @include mdq-max(sm) {
+        font-size: 30px;
+      }
+    }
+
+    .btn_next_month {
+      font-size: 40px;
+      color: #333;
+      display: inline-block;
+      vertical-align: middle;
+
+      i {
+        vertical-align: middle;
+      }
+
+      @include mdq-max(sm) {
+        font-size: 30px;
+      }
+    }
+  }
+}

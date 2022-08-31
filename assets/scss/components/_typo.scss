@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+//공통사용 텍스트 스타일 정의
+
+.common-title {
+	&--80 {
+		font-size: em(80);
+		letter-spacing: letterSpacing(-20);
+		line-height: 1.3;
+	}
+	&--50 {
+		font-size: em(50);
+		letter-spacing: letterSpacing(-20);
+		line-height: 1.3;
+	}
+	&--26 {
+		font-size: em(26);
+		letter-spacing: letterSpacing(-20);
+		line-height: 1.3;
+	}
+
+	@include mdq-max(lg) {
+		&--80 {
+			font-size: em(60);
+		}
+		&--50 {
+			font-size: em(40);
+		}
+		&--26 {
+			font-size: em(23);
+		}
+	}
+	@include mdq-max(md) {
+		&--80 {
+			font-size: em(48);
+		}
+		&--50 {
+			font-size: em(30);
+		}
+		&--26 {
+			font-size: em(20);
+		}
+	}
+}
+
+.common-text {
+	&--22 {
+		font-size: em(22);
+	}
+	&--18 {
+		font-size: em(18);
+	}
+	@include mdq-max(lg) {
+		&--22 {
+			font-size: em(20);
+		}
+		&--18 {
+			font-size: em(17);
+		}
+	}
+	@include mdq-max(md) {
+		&--22 {
+			font-size: em(17);
+		}
+		&--18 {
+			font-size: em(15);
+		}
+	}
+}

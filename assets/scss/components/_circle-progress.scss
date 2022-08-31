@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+$progress-w: rem(120); // 프로그레스 서클의 너비
+$progress-border: rem(14); // 프로그레스 바(보더) 두께
+
+.circle-progress {
+	width: $progress-w;
+	height: $progress-w;
+	background: #fefcff;
+	border-radius: 50%;
+	border: 1px solid #cbbada;
+	position: relative;
+
+	.circle {
+		.mask,
+		.fill {
+			width: calc(#{$progress-w} - 2px); // 원의 보더가 보이기 위해 2를 빼줌 (필요없을 시 -2 삭제 가능)
+			height: calc(#{$progress-w} - 2px); // 원의 보더가 보이기 위해 2를 빼줌 (필요없을 시 -2 삭제 가능)
+			position: absolute;
+			border-radius: 50%;
+		}
+		.mask {
+			clip: rect(0px, $progress-w, $progress-w, calc(#{$progress-w}/ 2 - 1px));
+		}
+
+		.fill {
+			clip: rect(0px, $progress-w/2, $progress-w, 0px);
+			background-color: #b8a0cc;
+		}
+	}
+
+	.inside-circle {
+		border-radius: 50%;
+		background: #f1ecf5;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: #b9a0cc;
+		position: absolute;
+		left: $progress-border;
+		right: $progress-border;
+		top: $progress-border;
+		bottom: $progress-border;
+		z-index: 10;
+		font-weight: 600;
+		font-size: em(28);
+		font-family: $font-family-sub;
+	}
+
+	.circle-bar {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		.bar {
+			width: 2px;
+			height: 100%;
+			background: $white;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -1px;
+			z-index: 5;
+			&--2 {
+				transform: rotate(36deg);
+			}
+			&--3 {
+				transform: rotate(72deg);
+			}
+			&--4 {
+				transform: rotate(108deg);
+			}
+			&--5 {
+				transform: rotate(144deg);
+			}
+			&--6 {
+				transform: rotate(180deg);
+			}
+			&--7 {
+				transform: rotate(216deg);
+			}
+			&--8 {
+				transform: rotate(252deg);
+			}
+		}
+	}
+}

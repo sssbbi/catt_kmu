@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.bullet-list {
+  font-size: 1rem;
+
+  @include bullet(
+    (
+      width: 10,
+      height: 10,
+      font-size: 16,
+      line-height: 1.5,
+    ),
+    '../images/icon/blog_i.png'
+  );
+}

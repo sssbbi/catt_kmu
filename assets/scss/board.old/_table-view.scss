@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+///*일반게시판 - 뷰페이지*/
+.table-view-01 {
+	table-layout: fixed;
+	width: 100%;
+	border-bottom: solid 1px #ddd;
+
+	.tit {
+		color: #000;
+	}
+	> thead,
+	> tbody {
+		> tr:first-child {
+			> th,
+			> td {
+				padding-top: 1em;
+				padding-bottom: 1em;
+				border-top: solid 1px $color-1;
+			}
+		}
+	}
+
+	> thead,
+	> tbody {
+		> tr {
+			> th,
+			> td {
+				padding: 10px 8px;
+				vertical-align: top;
+				border-top: solid 1px #ddd;
+			}
+		}
+	}
+
+	> thead > tr > th,
+	> tbody > tr > th {
+		color: #333;
+		text-align: left;
+		font-weight: 500;
+	}
+
+	.blue {
+		color: #5d9ad3;
+	}
+
+	.text_left {
+		text-align: left;
+	}
+
+	.addfile_txt {
+		padding-left: 35px;
+		background: url(../images/icon/file_i.png) no-repeat 0 50%;
+
+		@include mdq-max(lg) {
+			padding-left: 20px;
+			background-size: 15px;
+		}
+	}
+
+	.notice-b {
+		display: inline-block;
+		padding: 2px 8px;
+		background-color: #489fc4;
+		color: #fff;
+		font-size: 12px;
+		border-radius: 10px;
+	}
+
+	&.title-black th {
+		color: #333;
+	}
+
+	&.th-center th {
+		text-align: center;
+	}
+
+	&.table-line {
+		> thead > tr,
+		> tbody > tr {
+			> th,
+			> td {
+				border: solid 1px #ddd;
+			}
+		}
+	}
+
+	> tbody > tr > td .board-box {
+		min-height: 150px;
+		// padding: 10px;
+		text-align: initial;
+	}
+
+	.tit_box {
+		// border-bottom: 1px solid #ddd;
+	}
+
+	.tbl_detail_list {
+		li {
+			display: inline-block;
+			position: relative;
+			padding: 0 10px;
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			.tit_t {
+				font-weight: bold;
+				color: #222;
+				margin-right: 5px;
+			}
+
+			&:first-child:before {
+				display: none;
+			}
+
+			&:before {
+				content: '';
+				border-left: 1px solid #ccc;
+				height: 10px;
+				margin-top: -5px;
+				top: 50%;
+				left: -2px;
+				position: absolute;
+			}
+
+			@include mdq-max(sm) {
+				padding: 0 4px;
+
+				.tit_t {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	.tit_box p {
+		&.tit {
+			float: left;
+			font-size: rem(18);
+
+			@include mdq-max(lg) {
+				float: none;
+				font-size: rem(16);
+			}
+
+			.type_t {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 13px;
+				color: #fff;
+				font-weight: 400;
+				background: #666;
+				letter-spacing: -0.8px;
+				padding: 0 5px;
+				height: 25px;
+				line-height: 23px;
+				box-sizing: border-box;
+				margin-right: 10px;
+			}
+		}
+
+		&.tbl_detail_span {
+			float: right;
+			color: $gray-6;
+
+			@include mdq-max(lg) {
+				float: none;
+				margin-top: rem(10);
+			}
+
+			span {
+				&:first-child:before {
+					display: none;
+				}
+
+				&:before {
+					display: inline-block;
+					overflow: hidden;
+					width: 1px;
+					height: 10px;
+					margin: -1px 7px 0 4px;
+					background: #bbb;
+					content: '';
+					vertical-align: middle;
+				}
+			}
+
+			> span {
+				&.anwer:before,
+				&.anwer_on:before,
+				&.anwer_off:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	&.type_e {
+		/*항목이 많은 경우 */
+		.col_w {
+			width: 150px;
+		}
+
+		> thead > tr > th,
+		> tbody > tr > th {
+			background: #f6f6f6;
+			text-align: left;
+		}
+
+		@include mdq-max(lg) {
+			.col_w {
+				width: 80px;
+			}
+
+			> thead > tr > th,
+			> tbody > tr > th {
+				padding: 8px 2px;
+			}
+		}
+	}
+}
+
+///*뷰페이지 이전/다음글 이동*/
+.border-list-type {
+	border-top: solid 1px #999;
+	border-bottom: solid 1px #999;
+
+	li {
+		&:nth-child(1) {
+			border-bottom: solid 1px #c7c7c7;
+		}
+		position: relative;
+	}
+
+	.clearfix {
+		text-align: left;
+		display: flex;
+		align-items: center;
+		height: em(40);
+	}
+
+	.list-title {
+		flex-shrink: 0;
+		font-weight: 500;
+		// width: em(150);
+		padding: 0 50px;
+		color: #222;
+		background-repeat: no-repeat;
+		background-position: 24px center;
+		background-size: 12px;
+
+		@include mdq-max(md) {
+			padding: 0 25px 0 40px;
+			background-position: 15px center;
+			background-size: 10px;
+		}
+	}
+
+	.list-up-bg {
+		background-image: url('../images/icon/list-prev.png');
+	}
+
+	.list-down-bg {
+		background-image: url('../images/icon/list-next.png');
+	}
+
+	.w-con {
+		@include text-truncate(1);
+	}
+
+	.border-none {
+		border-bottom: none;
+	}
+}

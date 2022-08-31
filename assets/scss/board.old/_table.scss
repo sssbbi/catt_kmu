@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+// 테이블커스텀
+table {
+	.col_w {
+		width: rem(120);
+	}
+
+	.w_150 {
+		width: rem(150);
+	}
+
+	.xi-volume-up,
+	.xi-file-download {
+		font-size: rem(18);
+		color: $mc;
+	}
+
+	.xi-renew {
+		font-size: rem(28);
+		color: $mc;
+	}
+
+	td.text_left {
+		text-align: left;
+	}
+}

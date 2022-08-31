@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.loading-image {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  img {
+    max-width: 150px;
+    max-height: 150px;
+    width: 25vw;
+    height: 25vw;
+  }
+  svg {
+    width: 150px;
+    height: 150px;
+    fill: $color-1;
+    * {
+      fill: $color-1;
+    }
+  }
+}

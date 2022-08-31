@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.map {
+  @include map-kakao(percentage(500/1200));
+
+  @include mdq-max(md) {
+    &::after {
+      padding-bottom: 300px;
+    }
+  }
+}

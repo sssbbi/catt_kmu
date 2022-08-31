@@ -1,0 +1,24 @@
+// Text truncate
+// Requires inline-block or block for proper styling
+
+@mixin text-truncate($value: 1, $line-height: $line-height-base, $type: min) {
+  @if ($value==1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $value;
+    line-height: $line-height;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+
+    @if ($type==max) {
+      max-height: $line-height * $value + em;
+    } @else {
+      height: $line-height * $value + em;
+    }
+  }
+}

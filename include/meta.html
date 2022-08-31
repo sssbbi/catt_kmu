@@ -1,0 +1,84 @@
+<meta charset="UTF-8" />
+<!-- ( < IE10 ) -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+
+<!-- 사이트 기본설정 영역 START -->
+<!-- SEO -->
+<meta name="title" content="<?=$SS[sitename]?>" />
+<meta name="keywords" content="<?=$SS[sitekeyword]?>" />
+<meta name="author" content="Masstige" />
+<meta name="description" content="<?=$SS[sitedescription]?>" />
+<!-- 최대 155자 이내 -->
+<meta name="Robots" content="index, follow" />
+<!-- 검색 제외 페이지인 경우 noindex, nofollow -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="<?=$SS[sitename]?>" />
+<meta property="og:image" content="<?=$SS[siteimg]?>" />
+<meta property="og:site_name" content="<?=$SS[sitename]?>" />
+<meta property="og:url" content="<?=$SS[siteurl]?>" />
+<meta property="og:description" content="<?=$SS[sitedescription]?>" />
+
+<!-- Twitter -->
+<meta name="twitter:image" content="<?=$SS[siteimg]?>" />
+<meta name="twitter:description" content="<?=$SS[sitedescription]?>" />
+<meta name="twitter:title" content="<?=$SS[sitename]?>" />
+
+<!-- Naver Webmaster Tool -->
+<meta name="naver-site-verification" content="<?=$SS[sitesignature1]?>" />
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="<?=$SS[sitesignature2]?>" />
+
+<link rel="image_src" href="<?=$SS[siteimg]?>" />
+<!-- 대표 이미지 -->
+<link rel="shortcut icon" href="<?=$SS[sitefavicon]?>" />
+<!-- 파비콘 -->
+<link rel="canonical" href="<?=$SS[siteurl]?>" />
+<!-- 대표 URL -->
+
+<?=$SS[tracking_code1]?>
+<?=$SS[tracking_code2]?>
+<!-- 사이트 기본설정 영역 END -->
+
+<!-- XEIcon -->
+<link rel="stylesheet" href="../assets/fonts/icons/xeicon/xeicon.css" />
+
+<!-- Masstige Custom Icon for Board Template -->
+<link rel="stylesheet" href="../assets/fonts/icons/icomoon/masstige-icons.css" />
+
+<!-- Google Material Icons -->
+<link rel="stylesheet" href="../assets/fonts/icons/material/material-icons.css" />
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="../assets/fonts/icons/bootstrap/bootstrap-icons.min.css" />
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="../assets/css/common.min.css" />
+
+<!-- Load jQuery -->
+<script src="../assets/js/lib/jquery-1.7.1.min.js"></script>
+<!-- update your pre-1.9 jQuery code to jQuery 1.9 up to 3.0 -->
+<script src="../assets/js/lib/jquery-migrate-1.4.1.min.js"></script>
+<!-- jQuery 3.0 or higher, once you have used Migrate 1.x and upgraded to jQuery 1.9 or higher -->
+<!-- <script src="../assets/js/lib/jquery-migrate-3.3.2.min.js"></script>  -->
+<!-- mCustomScrollbar 사용시 아래 1.11.1 버전 사용 -->
+<!-- <script src="../assets/js/lib/jquery-1.11.1.min.js"></script> -->
+
+<script src="../assets/js/lib/jquery-ui.min.js"></script>
+
+<!-- Console 화면 노출  -->
+<script>
+  var cssRule = "font-size: 16px;"
+  if (window.console != undefined) {
+    setTimeout(console.log.bind(console,
+      "%c _____ _____ _____ _____ _____ _____ _____ _____\n|     |  _  |   __|   __|_   _|     |   __|   __|\n| | | |     |__   |__   | | | |-   -|  |  |   __|\n|_|_|_|__|__|_____|_____| |_| |_____|_____|_____|\nCreated By MASSTIGE.", cssRule),
+      0);
+  }
+</script>
+
+<title><? if($P_dp0!='main'){?> <? if($P_dp3!=null){?> <?=${nav_.$P_dp1._.$P_dp2._.$P_dp3}?> | <? }?> <? if($P_dp2!=null){?> <?=${nav_.$P_dp1._.$P_dp2}?> | <? }?> <?=${nav_.$P_dp1}?> | <? }?> <?=$SS[sitename]?></title>

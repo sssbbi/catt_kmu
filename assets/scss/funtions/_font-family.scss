@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@function sans-serif($val...) {
+  @return $val, $font-family-sans-serif;
+}
+
+@function serif($val...) {
+  @return $val, $font-family-serif;
+}

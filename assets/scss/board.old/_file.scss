@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+.file-box {
+	&__text {
+		background-color: $white;
+		border: 1px solid $input-border;
+		line-height: calc(#{$input-height} - 2px);
+		height: $input-height;
+		overflow: hidden;
+		padding: 0 rem(15);
+	}
+
+	&__btn {
+	}
+
+	input {
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%; //calc($btn + 2px);
+		height: $input-height;
+		opacity: 0;
+		filter: alpha(opacity=0);
+		cursor: pointer;
+		-webkit-appearance: none;
+		&::-webkit-file-upload-button {
+			cursor: pointer;
+		}
+	}
+}
+
+.file_box {
+	$btn: rem(100);
+	position: relative;
+	padding-right: $btn;
+	&:hover {
+		.btn_type_file {
+			background: #666;
+		}
+	}
+
+	.text_01 {
+		position: absolute;
+		top: 2px;
+		left: 0;
+	}
+
+	p {
+		border: 1px solid #ccc;
+		line-height: $input-height;
+		height: $input-height;
+		overflow: hidden;
+		padding: 0 10px;
+	}
+
+	.btn_type_file {
+		display: block;
+		width: $btn;
+		height: $input-height;
+		line-height: $input-height;
+		color: #fff;
+		background: #999;
+		font-weight: 300;
+		text-align: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+
+		&:hover {
+			background: #666;
+		}
+	}
+
+	input {
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%; //calc($btn + 2px);
+		height: $input-height;
+		opacity: 0;
+		filter: alpha(opacity=0);
+		cursor: pointer;
+		-webkit-appearance: none;
+	}
+}
+
+// file 다중선택 (커스텀)
+.file-label {
+	display: inline-block;
+	position: relative;
+	$btn: rem(120);
+
+	input[type='file'] {
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: $btn;
+		height: $input-height;
+		opacity: 0;
+		filter: alpha(opacity=0);
+		cursor: pointer;
+		-webkit-appearance: none;
+	}
+
+	&__btn {
+		display: block;
+		width: $btn;
+		height: $input-height;
+		line-height: $input-height;
+		text-align: center;
+		background: $gray-3;
+		color: $white;
+	}
+}
+
+#file-preview {
+	&.file-add {
+		.file-preview__txt {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/* 기본 팝업 */
+.popup {
+	position: relative;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: rem(20);
+	background-color: #fff;
+
+	&.popup--lg {
+		max-width: 1200px;
+	}
+
+	&.popup--sm {
+		max-width: 600px;
+	}
+
+	&__title {
+		font-size: rem(20);
+	}
+
+	&-body {
+		// border-top: 1px solid #ddd;
+		// border-bottom: 1px solid #ddd;
+	}
+
+	&-footer {
+	}
+
+	.policy-scroll {
+		max-height: rem(200);
+		overflow-x: hidden;
+		overflow-y: auto;
+		border: 1px solid $gray-c;
+		padding: rem(20);
+		font-weight: 300;
+		color: $gray-6;
+	}
+}
+
+/* 파일 다운로드 팝업 */
+.pop-file-download {
+	position: relative;
+	max-width: 500px;
+	max-height: 90vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: rem(30);
+
+	.link {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.imgToCover {
+  /* background-cover */
+  @include img-to-bg();
+}
+
+.imgToContain {
+  /* background-contain */
+  @include img-to-bg(contain);
+}

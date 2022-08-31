@@ -1,0 +1,206 @@
+@charset "UTF-8";
+$hover-effect-transition-duration: 500ms;
+$hover-effect-border-width: 10px;
+$hover-effect-border-color: $color-1;
+$hover-effect-dimmed-color: #000;
+$hover-effect-zoom: 0.108;
+
+@mixin hover-effect() {
+  > .hover-effect__wrap {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    > img {
+      transition: $hover-effect-transition-duration all;
+    }
+  }
+
+  &--zoomIn {
+    > .hover-effect__wrap > img {
+      transform: translate(-50%, -50%) scale(0.1) !important;
+    }
+    @include hover-focus() {
+      > .hover-effect__wrap > img {
+        transform: translate(-50%, -50%) scale(#{$hover-effect-zoom}) !important;
+      }
+    }
+  }
+
+  &--zoomOut {
+    > .hover-effect__wrap > img {
+      transform: translate(-50%, -50%) scale(#{$hover-effect-zoom}) !important;
+    }
+    @include hover-focus() {
+      > .hover-effect__wrap > img {
+        transform: translate(-50%, -50%) scale(0.1) !important;
+      }
+    }
+  }
+
+  &--dimmed {
+    > .hover-effect__wrap {
+      background-color: $hover-effect-dimmed-color;
+    }
+    @include hover-focus() {
+      > .hover-effect__wrap > img {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &--border {
+    > .hover-effect__wrap {
+      &:before {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: $hover-effect-border-width solid $hover-effect-border-color;
+        position: absolute;
+        display: block;
+        z-index: 5;
+        opacity: 0;
+        transition: $hover-effect-transition-duration all;
+      }
+    }
+    @include hover-focus() {
+      > .hover-effect__wrap:before {
+        opacity: 1;
+      }
+    }
+  }
+  &--outline {
+    > .hover-effect__wrap .outline {
+      position: absolute;
+      z-index: 2;
+      background: $hover-effect-border-color;
+      &--t,
+      &--b {
+        transition: width 300ms;
+        width: 0;
+        height: $hover-effect-border-width;
+      }
+      &--r,
+      &--l {
+        transition: height 300ms;
+        width: $hover-effect-border-width;
+        height: 0;
+      }
+    }
+    @include hover-focus() {
+      .outline {
+        &--t,
+        &--b {
+          width: 100%;
+        }
+        &--r,
+        &--l {
+          height: 100%;
+        }
+      }
+    }
+    // type-1 ( 셔터 )
+    &--1,
+    &--2 {
+      > .hover-effect__wrap .outline {
+        &--t {
+          left: 0;
+          top: 0;
+        }
+        &--r {
+          top: 0;
+          right: 0;
+        }
+        &--b {
+          right: 0;
+          bottom: 0;
+        }
+        &--l {
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+    // type-2 ( 시계방향 )
+    &--2 {
+      > .hover-effect__wrap .outline {
+        transition-timing-function: linear !important ;
+        transition-duration: $hover-effect-transition-duration / 4 !important;
+        &--t {
+          transition-delay: $hover-effect-transition-duration / 4 * 3;
+        }
+        &--r {
+          transition-delay: $hover-effect-transition-duration / 4 * 2;
+        }
+        &--b {
+          transition-delay: $hover-effect-transition-duration / 4 * 1;
+        }
+        &--l {
+          transition-delay: $hover-effect-transition-duration / 4 * 0;
+        }
+      }
+      @include hover-focus() {
+        > .hover-effect__wrap .outline {
+          &--t {
+            transition-delay: $hover-effect-transition-duration / 4 * 0;
+          }
+          &--r {
+            transition-delay: $hover-effect-transition-duration / 4 * 1;
+          }
+          &--b {
+            transition-delay: $hover-effect-transition-duration / 4 * 2;
+          }
+          &--l {
+            transition-delay: $hover-effect-transition-duration / 4 * 3;
+          }
+        }
+      }
+    }
+    // type-3 ( ┌ + ┘ )
+    &--3 {
+      > .hover-effect__wrap .outline {
+        &--t {
+          left: 0;
+          top: 0;
+        }
+        &--r {
+          bottom: 0;
+          right: 0;
+        }
+        &--b {
+          right: 0;
+          bottom: 0;
+        }
+        &--l {
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &--icon {
+    .hover-effect__icon {
+      position: absolute;
+      opacity: 0;
+      transition: $hover-effect-transition-duration all;
+      color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 5em;
+    }
+    > .hover-effect__wrap {
+      background-color: #000;
+    }
+    @include hover-focus() {
+      > .hover-effect__wrap > img {
+        opacity: 0.6;
+      }
+      .hover-effect__icon {
+        opacity: 0.9;
+      }
+    }
+  }
+}

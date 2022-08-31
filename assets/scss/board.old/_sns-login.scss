@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+$kakao: #3b1c1c !default;
+$facebook-bg: #0070c0 !default;
+$naver-bg: #19ce60 !default;
+$kakao-bg: #fae100 !default;
+
+.bg--facebook {
+  color: #fff;
+  background-color: $facebook-bg;
+}
+.bg--naver {
+  color: #fff;
+  background-color: $naver-bg;
+}
+.bg--kakao {
+  color: $kakao;
+  background-color: $kakao-bg;
+}
+
+.sns-login {
+  .item {
+    margin-bottom: rem(10);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: rem(50);
+    font-weight: 500;
+    padding: 0 em(50);
+    position: relative;
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      width: rem(50);
+      height: rem(50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg,
+      img {
+        width: em(35);
+        height: em(35);
+      }
+    }
+  }
+}
+
+.sns-login-management {
+  border-top: 1px solid #222;
+  letter-spacing: letterSpacing(-20);
+  .item {
+    display: flex;
+    align-items: center;
+    padding: rem(15) 0;
+    border-bottom: 1px solid #ddd;
+  }
+  &__sns {
+    width: rem(50);
+    height: rem(50);
+    padding: 0;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg,
+    img {
+      width: em(35);
+      height: em(35);
+    }
+  }
+  &__state {
+    padding: 0 1em;
+    line-height: 1.3;
+    flex: 1 1 auto;
+  }
+  &__btn {
+    flex: 0 0 auto;
+    margin-left: auto;
+    .btn {
+      display: inline-block;
+      padding: 1em 2em;
+      color: #fff;
+    }
+    @include mdq-max(lg) {
+      .btn {
+        padding: 0.8em 1em;
+      }
+    }
+  }
+}
+
+//임시 스타일
+.login-area {
+  max-width: 600px;
+  margin: 0 auto;
+}
+//임시 스타일

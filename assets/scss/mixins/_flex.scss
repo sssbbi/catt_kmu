@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+@mixin flex($flex-grow: 1, $flex-shrink: 0, $flex-basis: auto){
+  flex-grow: $flex-grow;
+  flex-shrink: $flex-shrink;
+  flex-basis: $flex-basis;
+}

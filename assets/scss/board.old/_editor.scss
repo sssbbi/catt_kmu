@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+//에디터
+.board-box {
+  //굵게strong,
+  b {
+    font-weight: bold;
+  }
+
+  //밑줄
+  u {
+    text-decoration: underline;
+  }
+
+  //기울임
+  i,
+  em {
+    font-style: italic;
+  }
+
+  //취소선
+  strike,
+  s {
+    text-decoration: line-through;
+  }
+
+  //순번리스트
+  ol,
+  ol li {
+    list-style: decimal;
+  }
+
+  //항목리스트
+  ul,
+  ul li {
+    list-style: disc;
+  }
+
+  img {
+    // width: auto !important;
+    height: auto !important;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.17em;
+  }
+
+  h4 {
+    font-size: medium;
+  }
+
+  h5 {
+    font-size: 0.83em;
+  }
+
+  h6 {
+    font-size: 0.67em;
+  }
+}

@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+.dis {
+  &_inblock {
+    display: inline-block;
+  }
+  &_block {
+    display: block;
+  }
+  &_inilne {
+    display: inline;
+  }
+  &_tbl {
+    display: table;
+  }
+  &_cel {
+    display: table-cell;
+  }
+}
+
+$spacing: 5, 10, 20, 30, 40;
+@each $spacing in $spacing {
+  .mt_#{$spacing} {
+    margin-top: #{$spacing}px;
+  }
+  .mb_#{$spacing} {
+    margin-bottom: #{$spacing}px;
+  }
+  .ml_#{$spacing} {
+    margin-left: #{$spacing}px;
+  }
+  .mr_#{$spacing} {
+    margin-right: #{$spacing}px;
+  }
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text {
+  &_center {
+    text-align: center;
+  }
+
+  &_left {
+    text-align: left;
+  }
+
+  &_right {
+    text-align: right;
+  }
+}

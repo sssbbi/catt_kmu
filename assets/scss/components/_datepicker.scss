@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+.datepicker {
+  &--custom {
+    .ui-datepicker-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 0 em(10) em(20);
+
+      .ui-datepicker-title {
+        order: 1;
+        font-weight: 500;
+        font-size: em(20);
+        padding: 0 rem(30);
+      }
+
+      .ui-corner-all {
+        cursor: pointer;
+        span {
+          font-size: 0;
+          text-indent: -9999px;
+          overflow: hidden;
+          &::before {
+            font-family: 'xeicon' !important;
+            font-size: rem(30);
+            color: $gray-4;
+          }
+        }
+
+        &.ui-datepicker-prev {
+          order: 0;
+          span::before {
+            content: '\e93d';
+          }
+        }
+
+        &.ui-datepicker-next {
+          order: 2;
+          span::before {
+            content: '\e940';
+          }
+        }
+      }
+    }
+
+    .ui-datepicker-calendar {
+      font-size: rem(15);
+      width: 100%;
+      thead {
+        th {
+          border-top: 1px solid $gray-6;
+          border-bottom: 1px solid $gray-6;
+          font-weight: 500;
+          text-align: center;
+          padding: rem(8) rem(10);
+        }
+      }
+      tbody {
+        td {
+          border-bottom: 1px solid $gray-d;
+          padding: rem(24) rem(10);
+          text-align: center;
+          font-weight: 400;
+          color: $gray-3;
+          position: relative;
+          &.ui-state-disabled {
+            color: $gray-9;
+          }
+          &.ui-datepicker-current-day {
+            color: $white;
+            &::before {
+              content: '';
+              width: rem(30);
+              height: rem(30);
+              border-radius: 50%;
+              background: $color-1;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+            a {
+              position: relative;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

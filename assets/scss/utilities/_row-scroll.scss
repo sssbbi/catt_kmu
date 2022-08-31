@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.row-scrollwrap {
+  &__txt {
+    text-align: left;
+    display: none;
+    color: #888;
+    margin-bottom: 5px;
+    line-height: 1.3;
+    font-size: 0.8em;
+    letter-spacing: letterSpacing(-30);
+  }
+  &__scroll {
+    overflow-x: auto;
+    position: relative;
+  }
+}

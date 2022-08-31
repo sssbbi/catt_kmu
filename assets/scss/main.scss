@@ -1,0 +1,380 @@
+@charset "UTF-8";
+
+@import 'functions';
+@import 'variables';
+
+// Mixins
+@import 'mixins';
+
+// main
+.main {
+	overflow: hidden;
+
+	.intro {
+		.text-circle {
+			width: 70%;
+			max-width: 500px;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+			border-radius: 50%;
+			cursor: pointer;
+			&__inner {
+				width: percentage(802/1000);
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 5;
+			}
+
+			.bg {
+				background: $white;
+				z-index: 1;
+				position: absolute;
+				height: 50%;
+				transition: all 1.5s;
+				&--1 {
+					left: 50%;
+					right: 0;
+					top: 0;
+				}
+				&--2 {
+					left: 50%;
+					right: 0;
+					top: 50%;
+				}
+				&--3 {
+					left: 0;
+					right: 50%;
+					top: 50%;
+				}
+				&--4 {
+					left: 0;
+					right: 50%;
+					bottom: 50%;
+				}
+			}
+
+			&::after {
+				content: '';
+				border: em(4) solid $color-1;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				border-radius: 50%;
+				z-index: 10;
+
+				@include mdq-max(sm) {
+					border-width: em(3);
+				}
+			}
+
+			&.active {
+				.bg {
+					&--1 {
+						left: 100%;
+					}
+					&--2 {
+						top: 100%;
+					}
+					&--3 {
+						right: 100%;
+					}
+					&--4 {
+						bottom: 100%;
+					}
+				}
+			}
+
+			@include mdq-min(lg) {
+				&:hover {
+					.bg {
+						&--1 {
+							left: 100%;
+						}
+						&--2 {
+							top: 100%;
+						}
+						&--3 {
+							right: 100%;
+						}
+						&--4 {
+							bottom: 100%;
+						}
+					}
+				}
+			}
+		}
+
+		#typing-text {
+			min-height: 2.6em;
+			@include mdq-max(xl) {
+				min-height: 3.9em;
+			}
+		}
+	}
+
+	.work-wrap {
+		.img-box {
+			flex: 0 0 em(440);
+			max-width: em(440);
+		}
+		.text-box {
+			flex: 1 1 auto;
+			width: 1%;
+			padding-left: 8.334vw;
+		}
+
+		@include mdq-max(lg) {
+			.img-box {
+				flex: 0 0 em(380);
+				max-width: em(380);
+			}
+			.text-box {
+				padding-left: 5vw;
+			}
+		}
+		@include mdq-max(md) {
+			.img-box {
+				flex: 1 0 100%;
+				max-width: 100%;
+			}
+			.text-box {
+				flex: 1 0 100%;
+				width: 100%;
+				padding: em(40) 0 0;
+			}
+		}
+	}
+
+	.associate-professor {
+		.border {
+			border-width: em(20) !important;
+			padding: 7.292vw;
+		}
+		.text-box {
+			flex: 1 1 auto;
+			width: 1%;
+			padding-right: 4vw;
+		}
+		.img-box {
+			flex: 0 0 em(310);
+			max-width: em(310);
+		}
+
+		@include mdq-max(xxl) {
+			.border {
+				padding: 7vw 5vw;
+			}
+		}
+		@include mdq-max(lg) {
+			.border {
+				border-width: em(15) !important;
+				padding: em(50) em(30);
+			}
+			.img-box {
+				flex: 0 0 em(320);
+				max-width: em(320);
+			}
+		}
+		@include mdq-max(md) {
+			.text-box {
+				flex: 1 0 100%;
+				width: 100%;
+				padding: 0 0 em(30);
+			}
+			.img-box {
+				flex: 1 0 100%;
+				max-width: 100%;
+			}
+		}
+		@include mdq-max(sm) {
+			.border {
+				border-width: em(12) !important;
+				padding: em(40) em(20);
+			}
+		}
+	}
+
+	.service {
+		&-row {
+			&__item {
+				min-height: em(290);
+				@include mdq-max(md) {
+					min-height: em(200);
+				}
+				@include mdq-max(sm) {
+					min-height: em(180);
+				}
+			}
+
+			@include mdq-max(xl) {
+				.common-title--80 {
+					font-size: em(65);
+				}
+			}
+			@include mdq-max(lg) {
+				.common-title--80 {
+					font-size: em(52);
+				}
+			}
+			@include mdq-max(md) {
+				.common-title--80 {
+					font-size: em(48);
+				}
+			}
+		}
+
+		.logo-slider {
+			text-align: center;
+			.swiper-wrapper,
+			.slick-list,
+			.slick-track {
+				transition-timing-function: linear !important;
+			}
+		}
+	}
+
+	.contact {
+		&-wrap {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		&__title {
+			flex: 0 0 percentage(600/1400);
+			max-width: percentage(600/1400);
+		}
+		&__form {
+			flex: 1 1 auto;
+			width: 1%;
+		}
+
+		@include mdq-max(lg) {
+			&__title {
+				flex: 1 0 100%;
+				max-width: 100%;
+				margin-bottom: em(50);
+			}
+			&__form {
+				flex: 1 0 100%;
+				width: 100%;
+			}
+		}
+		@include mdq-max(sm) {
+			&__title {
+				margin-bottom: em(30);
+			}
+		}
+
+		.board-form {
+			&-focus {
+				position: relative;
+				&.focus,
+				&.active {
+					.board-form-label {
+						font-size: em(18);
+						height: em(20, 18);
+						line-height: em(20, 18);
+						transform: translateY(-50%);
+						@include mdq-max(lg) {
+							font-size: em(16);
+						}
+						@include mdq-max(md) {
+							font-size: em(15);
+						}
+					}
+				}
+				&--textarea {
+					.board-form-label {
+						height: auto;
+						line-height: 1.3;
+					}
+					&.focus,
+					&.active {
+						.board-form-label {
+							transform: translateY(-100%);
+						}
+					}
+				}
+			}
+			&-label {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: em(70, 26);
+				line-height: em(70, 26);
+				color: #999;
+				font-size: em(26);
+				transition: all 0.3s ease-in-out;
+				@include mdq-max(lg) {
+					font-size: em(23);
+				}
+				@include mdq-max(md) {
+					font-size: em(20);
+				}
+			}
+			&-input {
+				height: em(70, 26);
+				padding: 0;
+			}
+			&-textarea {
+				height: rem(150);
+				padding: rem(10) 0;
+			}
+			&-checkbox {
+				width: rem(16);
+				height: rem(16);
+			}
+		}
+
+		.code {
+			display: inline-block;
+			font-size: 1em;
+			height: em(50);
+			line-height: em(50);
+			padding: 0 rem(15);
+			text-align: center;
+			border: 0;
+			background-color: $color-1;
+			color: $white;
+			margin-right: rem(5);
+			& + .board-form-input {
+				font-size: 1em;
+				height: em(50);
+				&::placeholder {
+					color: $gray-a;
+				}
+			}
+		}
+
+		.board-form-input,
+		.board-form-textarea {
+			border: 0;
+			border-bottom: 1px solid $gray-c;
+			font-size: em(26);
+			background-color: transparent;
+			&::placeholder {
+				color: transparent;
+			}
+			&:focus {
+				outline: 0;
+				border-bottom-color: $color-1;
+			}
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover,
+			&:-webkit-autofill:focus {
+				-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+			}
+
+			@include mdq-max(lg) {
+				font-size: em(23);
+			}
+			@include mdq-max(md) {
+				font-size: em(20);
+			}
+		}
+	}
+}

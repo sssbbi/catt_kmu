@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+$header-fix: true; //true: 헤더가 상단 고정일 경우입니다.
+
+.header {
+	//border-bottom: 1px solid #ddd;
+	// background-color: rgba($white, 0.8);
+	width: 100%;
+	z-index: 500;
+	height: $nav-height;
+	border-bottom: 1px solid transparent;
+	transition: height 0.3s ease;
+	@if ($header-fix == true) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		@at-root html {
+			scroll-padding-top: $nav-height + $container-gutter-width/2; //input required 브라우저 메시지 포커싱 위치를 맞춰줍니다.
+		}
+	}
+	@include mdq-max(lg) {
+		height: $nav-height-lg;
+		border-bottom-color: $gray-e;
+		//background-color: rgba($white, 0.8);
+
+		@at-root html {
+			scroll-padding-top: $nav-height-lg + $container-gutter-width/2; //input required 브라우저 메시지 포커싱 위치를 맞춰줍니다.
+		}
+	}
+
+	.header-wrap {
+		max-width: 1800px + $container-gutter-width;
+		height: $nav-height;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		transition: height 0.3s ease;
+
+		.logo {
+			flex: 0 0 auto;
+			img {
+				width: rem(267);
+			}
+		}
+
+		@include mdq-max(lg) {
+			height: $nav-height-lg;
+
+			.logo {
+				img {
+					width: rem(220);
+				}
+			}
+		}
+	}
+
+	&.scroll {
+		background-color: rgba($white, 0.8);
+		border-bottom-color: $gray-e;
+		height: $nav-height - 20px;
+		.header-wrap {
+			height: $nav-height - 20px;
+		}
+
+		@include mdq-max(lg) {
+			height: $nav-height-lg;
+			.header-wrap {
+				height: $nav-height-lg;
+			}
+		}
+	}
+}

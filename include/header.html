@@ -1,0 +1,32 @@
+<ul class="skip">
+	<li><a class="link" href="#contents">본문내용 바로가기</a></li>
+	<li><a class="link" href="#header">헤더 바로가기</a></li>
+	<li><a class="link" href="#footer">푸터 바로가기</a></li>
+</ul>
+
+<header id="header" class="header">
+	<div class="container header-wrap">
+		<a href="../main/main.html" class="logo d-inline-flex align-items-center h-100" title="메인으로">
+			<img src="../assets/images/main/logo.png" alt="<?=$SS[sitename]?>" />
+		</a>
+
+		<!-- S : navigation -->
+		<nav class="nav">
+			<? include "../include/nav.html" ?>
+		</nav>
+		<!-- E : navigation -->
+		<button class="nav-mobile__btn" type="button">
+			<i class="xi-bars"></i>
+		</button>
+	</div>
+</header>
+
+<!-- S : mobile navigation -->
+<? include "../include/aside.html" ?>
+<!-- E : mobile navigation -->
+
+<!-- S : loading image -->
+<div class="loading-image">
+	<img src="../assets/images/icon/loading.svg" alt="loading" />
+</div>
+<!-- E : loading image -->

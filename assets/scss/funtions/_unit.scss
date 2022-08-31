@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@function em($val, $std:16) {
+  @return ($val/$std)*1em;
+}
+
+@function rem($val, $std:16) {
+  @return ($val/$std)*1rem;
+}
+
+@function vw($val, $std:1920) {
+  @return ($val/($std/100))*1vw;
+}

@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+@function letterSpacing($val) {
+  @return ($val/1000)*1em;
+}

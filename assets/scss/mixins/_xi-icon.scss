@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+@mixin xi-icon($icon, $type: before) {
+  @if ($type==after) {
+    &:after {
+      font-family: xeicon !important;
+      display: inline-block;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: ($icon);
+    }
+  } @else {
+    &:before {
+      font-family: xeicon !important;
+      display: inline-block;
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: ($icon);
+    }
+  }
+}

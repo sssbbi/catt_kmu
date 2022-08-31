@@ -1,0 +1,49 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = 'policy';    
+    $P_dp2 = "3";
+    include "../include/meta.html";
+		?>
+  </head>
+  <body class="sub-body">
+    <!-- S : Header -->
+    <? include "../include/header.html" ?>
+    <!-- E : Header -->
+
+    <!-- S : Sub visual -->
+    <? include "../include/sub-visual.html" ?>
+    <!-- E : Sub visual -->
+
+    <!-- S : Main -->
+    <main class="main py-20" id="contents">
+      <!-- S : Section -->
+      <section class="section">
+        <div class="container">
+
+          <div class="sub-title">
+            <h1 class="sub-title__title">
+              <?=${nav_.$P_dp1._.$P_dp2}?>
+            </h1>
+          </div>
+
+          <div class="text-left text-keep text-gray-5 font-weight-light">
+            본 웹사이트는 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단 수집되는 것을 거부합니다.<br>
+            이를 위반 시 『정보통신망 이용 촉진 및 정보보호 등에 관한 법률』등에 의해 처벌받을 수 있습니다.
+          </div>
+
+
+          </div>
+
+        </div>
+      </section>
+      <!-- E : Section -->
+    </main>
+    <!-- E : Main -->
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+  </body>
+</html>

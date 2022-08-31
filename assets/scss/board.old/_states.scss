@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+
+.anwer,
+[class*='anwer_'] {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.9em;
+  border-radius: 2px;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  font-weight: 300;
+  padding: 0.3em 0.5em;
+}
+
+.anwer {
+  &_off,
+  &._off {
+    background-color: #989aa6;
+  }
+
+  &_on,
+  &._on {
+    background-color: $mc;
+  }
+
+  &_view,
+  &._view {
+    background-color: $mc2;
+  }
+
+  &_ask,
+  &._ask {
+    background-color: #999999;
+    color: #fff;
+  }
+
+  &_cancel,
+  &._cancel {
+    background-color: #dddddd;
+    color: #666;
+  }
+}

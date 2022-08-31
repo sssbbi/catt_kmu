@@ -1,0 +1,374 @@
+@charset "UTF-8";
+
+// enable
+$media-query-enable: true !default;
+
+$black: #000 !default;
+$gray-1: #111 !default;
+$gray-2: #222 !default;
+$gray-3: #333 !default;
+$gray-4: #444 !default;
+$gray-5: #555 !default;
+$gray-6: #666 !default;
+$gray-7: #777 !default;
+$gray-8: #888 !default;
+$gray-9: #999 !default;
+$gray-a: #aaa !default;
+$gray-b: #bbb !default;
+$gray-c: #ccc !default;
+$gray-d: #ddd !default;
+$gray-e: #eee !default;
+$white: #fff !default;
+
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+	(
+		'gray-0': $black,
+		'gray-1': $gray-1,
+		'gray-2': $gray-2,
+		'gray-3': $gray-3,
+		'gray-4': $gray-4,
+		'gray-5': $gray-5,
+		'gray-6': $gray-6,
+		'gray-7': $gray-7,
+		'gray-8': $gray-8,
+		'gray-9': $gray-9,
+		'gray-a': $gray-a,
+		'gray-b': $gray-b,
+		'gray-c': $gray-c,
+		'gray-d': $gray-d,
+		'gray-e': $gray-e,
+		'gray-f': $white,
+	),
+	$grays
+);
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #5cb85c !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+	(
+		'blue': $blue,
+		'indigo': $indigo,
+		'purple': $purple,
+		'pink': $pink,
+		'red': $red,
+		'orange': $orange,
+		'yellow': $yellow,
+		'green': $green,
+		'teal': $teal,
+		'cyan': $cyan,
+		'white': $white,
+		'gray': $gray-6,
+		'gray-dark': $gray-8,
+	),
+	$colors
+);
+
+$color-1: #4f3f96 !default;
+$color-2: $cyan;
+$color-3: $teal;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-e !default;
+$dark: $gray-1 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+	(
+		'color-1': $color-1,
+		'color-2': $color-2,
+		'color-3': $color-3,
+		'success': $success,
+		'info': $info,
+		'warning': $warning,
+		'danger': $danger,
+		'light': $light,
+		'dark': $dark,
+	),
+	$theme-colors
+);
+
+// Spacing
+//
+// Spacer Unit : 4 == 4px ( 여백 단위 변수 )
+// Spacer Max : 20 == 80px ( 여백 최대값 )
+$spacer: 1rem !default;
+$spacerUnit: 4;
+$spacerMax: 40;
+$spacers: () !default;
+@for $i from 0 through $spacerMax {
+	$spacers: map-merge((#{$i}: $spacer * ($i/$spacerUnit)), $spacers);
+}
+
+// Sizes
+//
+// Size Max : 100 == 100% ( 너비 최대값 )
+$sizeMax: 100;
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+@for $i from 0 through $sizeMax {
+	$sizes: map-merge((#{$i}: $i * 1%), $sizes);
+}
+
+// Body colors
+$body-bg: $white !default;
+$body-color: $gray-1 !default;
+
+// Links
+$link-color: theme-color('color-1') !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 0 !default;
+
+// Font Size breakpoints
+$font-size-breakpoints: (
+	xxxs: 13px,
+	sm: 14px,
+	md: 15px,
+	lg: 16px,
+) !default;
+
+// Grid breakpoints
+$grid-breakpoints: (
+	xxxs: 0,
+	xxs: 320px,
+	xs: 375px,
+	sm: 576px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1200px,
+	xxl: 1400px,
+	xxxl: 1600px,
+) !default;
+
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-gutter-width: 40px;
+$container-max-widths: (
+	xxxs: 1400px + $container-gutter-width,
+	// xs: 576px,
+	// sm: 768px,
+	// md: 1024px,
+	// lg: 1200px,,,,,,,,
+) !default;
+
+@include _assert-ascending($container-max-widths, '$container-max-widths');
+
+// Options
+$enable-gradients: true !default;
+$enable-deprecation-messages: true !default;
+
+// Components
+$border-width: 1px !default;
+$border-color: $gray-d !default;
+$border-radius: 0.25rem !default;
+$border-radius-lg: 0.3rem !default;
+$border-radius-sm: 0.2rem !default;
+
+$rounded-pill: 50rem !default;
+
+$embed-responsive-aspect-ratios: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$embed-responsive-aspect-ratios: join(((21 9), (16 9), (4 3), (1 1)), $embed-responsive-aspect-ratios);
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: 'Nunito Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-family-serif: -apple-system, BlinkMacSystemFont, 'Times New Roman', 'Palatino Linotype', 'Book Antiqua', Georgia, Times, Palatino, serif !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-main: $font-family-sans-serif !default;
+$font-family-sub: 'Noto Sans KR', $font-family-serif !default;
+// stylelint-enable value-keyword-case
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+
+$font-weight-thin: 100 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extrabold: 800 !default;
+$font-weight-black: 900 !default;
+
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$heading-sizes: (
+	h1: $h1-font-size,
+	h2: $h2-font-size,
+	h3: $h3-font-size,
+	h4: $h4-font-size,
+	h5: $h5-font-size,
+	h6: $h6-font-size,
+) !default;
+
+$headings-margin-bottom: $spacer / 2 !default;
+$headings-font-family: null !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: null !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
+$display-line-height: $headings-line-height !default;
+
+$lead-font-size: $font-size-base * 1.25 !default;
+$lead-font-weight: 300 !default;
+
+$small-font-size: 80% !default;
+
+$text-muted: $gray-6 !default;
+
+$blockquote-small-color: $gray-6 !default;
+$blockquote-small-font-size: $small-font-size !default;
+$blockquote-font-size: $font-size-base * 1.25 !default;
+
+$hr-border-color: rgba($black, 0.1) !default;
+$hr-border-width: $border-width !default;
+
+$mark-padding: 0.2em !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$kbd-box-shadow: inset 0 -0.1rem 0 rgba($black, 0.25) !default;
+$nested-kbd-font-weight: $font-weight-bold !default;
+
+$list-inline-padding: 0.5rem !default;
+
+$mark-bg: #fcf8e3 !default;
+
+$hr-margin-y: $spacer !default;
+
+// Z-index
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+// Utilities
+$displays: none, inline, inline-block, block, table, table-caption, table-column, table-column-group, table-header-group, table-footer-group, table-row-group, table-row, table-cell, flex, inline-flex !default;
+$overflows: auto, hidden !default;
+$positions: static, relative, absolute, fixed, sticky !default;
+$user-selects: all, auto, none !default;
+
+// Grid
+$enable-grid-classes: true;
+$grid-columns: 12 !default;
+$grid-gutter-width: 20px !default;
+$grid-row-columns: 6 !default;
+
+// Functions
+$yiq-contrasted-threshold: 150 !default;
+$yiq-text-dark: $gray-1 !default;
+$yiq-text-light: $white !default;
+
+// Tooltips
+$tooltip-font-size: $font-size-sm !default;
+$tooltip-max-width: 200px !default;
+$tooltip-color: $white !default;
+$tooltip-bg: $black !default;
+$tooltip-border-radius: $border-radius !default;
+$tooltip-opacity: 0.9 !default;
+$tooltip-padding-y: 0.25rem !default;
+$tooltip-padding-x: 0.5rem !default;
+$tooltip-margin: 0 !default;
+
+$tooltip-arrow-width: 0.8rem !default;
+$tooltip-arrow-height: 0.4rem !default;
+$tooltip-arrow-color: $tooltip-bg !default;
+
+// Header Layout
+$nav-height: 120px; //네비 높이
+$nav-height-lg: 60px; //네비 높이(lg미만)
+
+// Modals
+
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-transitions: true !default;
+$enable-prefers-reduced-motion-media-query: true !default;
+
+// Padding applied to the modal body
+$modal-inner-padding: 1rem !default;
+
+// Margin between elements in footer, must be lower than or equal to 2 * $modal-inner-padding
+$modal-footer-margin-between: 0.5rem !default;
+
+$modal-dialog-margin: 0.5rem !default;
+$modal-dialog-margin-y-sm-up: 1.75rem !default;
+
+$modal-title-line-height: $line-height-base !default;
+
+$modal-content-color: null !default;
+$modal-content-bg: $white !default;
+$modal-content-border-color: rgba($black, 0.2) !default;
+$modal-content-border-width: $border-width !default;
+$modal-content-border-radius: $border-radius-lg !default;
+$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
+$modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba($black, 0.5) !default;
+$modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba($black, 0.5) !default;
+
+$modal-backdrop-bg: $black !default;
+$modal-backdrop-opacity: 0.5 !default;
+$modal-header-border-color: $border-color !default;
+$modal-footer-border-color: $modal-header-border-color !default;
+$modal-header-border-width: $modal-content-border-width !default;
+$modal-footer-border-width: $modal-header-border-width !default;
+$modal-header-padding-y: 1rem !default;
+$modal-header-padding-x: 1rem !default;
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x !default; // Keep this for backwards compatibility
+
+$modal-xl: 1140px !default;
+$modal-lg: 800px !default;
+$modal-md: 500px !default;
+$modal-sm: 300px !default;
+
+$modal-fade-transform: translate(0, -50px) !default;
+$modal-show-transform: none !default;
+$modal-transition: transform 0.3s ease-out !default;
+$modal-scale-transform: scale(1.02) !default;

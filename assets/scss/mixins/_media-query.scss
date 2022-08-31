@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@mixin mdq-min($breakpoint) {
+  $min: if(map-get($grid-breakpoints, $breakpoint) == 0, 0, map-get($grid-breakpoints, $breakpoint) + 0.02);
+  @media all and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin mdq-max($breakpoint) {
+  $max: map-get($grid-breakpoints, $breakpoint);
+  @media all and (max-width: $max) {
+    @content;
+  }
+}

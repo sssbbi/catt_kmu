@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+.input_for {
+	width: 100%;
+}
+.input_50 {
+	width: 100%;
+	max-width: 500px;
+}
+.input_30 {
+	width: 100%;
+	max-width: 300px;
+}
+
+input,
+select,
+textarea {
+	font-size: 1rem;
+}
+
+.table-btn-01,
+input[type='file'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+select {
+	height: $input-height;
+	border: solid 1px $input-border;
+	padding: 0 0.5em;
+}
+
+select {
+	text-overflow: ellipsis;
+	width: 100%;
+	// background: url(../images/icon/select_down.png) no-repeat;
+	// background-position: 100% 50%;
+	// background-size: auto rem(15);
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	@at-root {
+		.lt-ie10 select {
+			font-family: inherit;
+			background: none;
+			padding: 0;
+
+			&:before {
+				display: block;
+				position: absolute;
+				content: '';
+				right: 0px;
+				top: 0px;
+				height: 1em;
+				width: 1em;
+				margin: 2px;
+				// background: red;
+				z-index: 5;
+			}
+		}
+
+		.lt-ie9 select {
+			font-family: inherit;
+			background: none;
+			padding: 6px;
+		}
+	}
+}
+
+textarea {
+	border: solid 1px $input-border;
+	background-color: #fff;
+	overflow: auto;
+	min-height: 100px;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	resize: none;
+
+	&.txtarea {
+		width: 100%;
+		padding: 8px;
+		overflow-y: auto;
+	}
+}
+
+//나눔스퀘어등 사용시 password input 에서 타이핑표시(**)가 되지 않는 문제 fix
+input[type='password'] {
+	font-family: inherit;
+	font-family: 'Noto Sans KR', sans-serif;
+
+	&:placeholder-shown {
+		font-family: $font-family-sans-serif;
+	}
+}
+
+.area_for {
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	height: 150px;
+	overflow-y: auto;
+}
+
+// 인풋커스텀
+.input_date {
+	background: url(../images/icon/i_calendar.png) no-repeat right center;
+	@include mdq-max(lg) {
+		background-size: 20px;
+	}
+}
+
+.input_find {
+	max-width: 500px;
+	$w: 100px;
+	padding-right: $w + 10px;
+	position: relative;
+
+	input {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.table-btn-01 {
+		width: $w;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0;
+	}
+
+	@include mdq-max(lg) {
+		$w: 70px;
+		padding-right: $w + 5px;
+		.table-btn-01 {
+			width: $w;
+		}
+	}
+}

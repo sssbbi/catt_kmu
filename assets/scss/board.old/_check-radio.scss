@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+input[type='checkbox'],
+input[type='radio'] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+
+	+ label {
+		display: inline-block;
+		position: relative;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+}
+
+input[type='checkbox'] {
+	$w: rem(19);
+	line-height: $w;
+
+	+ label {
+		padding-left: ($w + 0.3rem);
+
+		&:before {
+			width: $w;
+			height: $w;
+			top: 50%;
+			margin-top: -$w/2;
+			content: '';
+			position: absolute;
+			left: 0;
+			text-align: center;
+			background-position: center;
+			background-size: cover;
+			border: 1px solid #ddd;
+			// font-size: calc($w - 2px);
+		}
+
+		&:hover:before {
+			border-color: $mc;
+		}
+	}
+
+	&:checked {
+		+ label:before {
+			font-family: xeicon !important;
+			display: inline-block;
+			speak-as: none;
+			font-style: normal;
+			font-weight: 400;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: '\e929';
+			color: #fff;
+			background-color: $mc;
+			border-color: $mc;
+		}
+	}
+}
+
+input[type='radio'] {
+	$w: rem(19);
+	line-height: $w;
+
+	+ label {
+		// font-size: 18px;
+		padding-right: 1.5em;
+		padding-left: ($w + 0.3rem);
+
+		&:before {
+			top: 50%;
+			margin-top: -$w/2;
+			width: $w;
+			height: $w;
+			content: '';
+			border: 1px solid #ddd;
+			border-radius: 50%;
+			position: absolute;
+			box-sizing: border-box;
+			left: 0;
+		}
+	}
+
+	&:hover + label:before {
+		border-color: #222;
+	}
+
+	&:checked {
+		+ label:before {
+			border: rem(5) solid $mc;
+		}
+	}
+
+	// @include mdq-max(sm) {
+	//   $w: 14px;
+	//   line-height: $w;
+
+	//   +label {
+	//     font-size: 14px;
+	//     padding-right: 15px;
+	//     padding-left: $w + 4px;
+
+	//     &:before {
+	//       margin-top: -$w/2;
+	//       width: $w;
+	//       height: $w;
+	//     }
+	//   }
+
+	//   &:checked+label:before {
+	//     border-width: 4px;
+	//   }
+	// }
+}
+
+// label input checkbox, radio style
+.input-label {
+	$w: 20px;
+	line-height: $w;
+
+	&__txt {
+		display: inline-block;
+		line-height: $w;
+		position: relative;
+		padding-left: ($w + 5px);
+		cursor: pointer;
+		&::before {
+			content: '';
+			width: $w;
+			height: $w;
+			line-height: ($w - 2px);
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -$w/2;
+			text-align: center;
+			background-position: center;
+			background-size: cover;
+			border: 1px solid #ddd;
+			box-sizing: border-box;
+		}
+	}
+
+	&--checkbox,
+	&--radio {
+		position: relative;
+		input {
+			//브라우저 기본경고창 위치 확보
+			height: $w + 2px;
+			width: $w + 2px;
+			top: 1px;
+			left: 1px;
+		}
+	}
+	&--checkbox {
+		input[type='checkbox']:focus + .input-label__txt::before {
+			border-color: $color-1;
+		}
+
+		input[type='checkbox']:checked + .input-label__txt::before {
+			content: '\e929';
+			font-family: xeicon !important;
+			background: $color-1;
+			border-color: $color-1;
+			color: $white;
+		}
+	}
+
+	&--radio {
+		.input-label__txt::before {
+			border-radius: 50%;
+		}
+		input[type='radio']:focus + .input-label__txt::before {
+			border-color: $color-1;
+		}
+
+		input[type='radio']:checked + .input-label__txt {
+			&::before {
+				z-index: 1;
+			}
+			&::after {
+				content: '';
+				width: $w;
+				height: $w;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: -$w/2;
+				background: $color-1;
+				border: 6px solid $white;
+				border-radius: 100%;
+				box-sizing: border-box;
+			}
+		}
+	}
+
+	&--box {
+		display: block;
+		line-height: normal;
+		.input-label__txt {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			line-height: 1.2;
+			position: relative;
+			padding: 0 rem(10);
+			height: rem(60);
+			cursor: pointer;
+			border: 1px solid $color-1;
+			background-color: $white;
+			color: $color-1;
+			margin: -1px -1px 0 0;
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+		input:focus + .input-label__txt,
+		input:checked + .input-label__txt {
+			background-color: $color-1;
+			color: $white;
+		}
+	}
+}

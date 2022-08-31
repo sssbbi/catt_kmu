@@ -1,0 +1,165 @@
+@charset "UTF-8";
+// input
+$mc: $color-1;
+$mc2: $color-2;
+
+$input-height: rem(50);
+$input-height-lg: $input-height;
+$input-border: #ddd;
+$input-border-active-width: 3px;
+
+@import 'utilities'; // 유틸리티 ( mt_5, mt_10, ... )
+@import 'buttons'; // 버튼 ( btn-type-01, btn-type02, ... )
+@import 'forms'; // 입력폼 관련 (input, select, textarea, ... )
+@import 'editor'; // 에디터 영역 ( board-box )
+@import 'file'; // 파일첨부 ( file_box )
+// @import 'check-radio'; // 체크박스, 라디오박스
+
+@import 'table'; // 테이블 공통 스타일 ( col_w, w_150, code, ... )
+@import 'table-view'; // 뷰페이지 ( table-view-01 )
+@import 'table-board-for'; // 일반게시판, Q&A 게시판 ( table_board_for )
+@import 'gallery'; // 갤러리형 ( img_board_list )
+@import 'thumbnail'; // 썸네일형 ( thumbnail )
+@import 'paging'; // 페이징 ( paging-area )
+@import 'search'; // 게시판 검색 ( board-search-01 )
+@import 'write'; // 작성폼 ( table-form-01 )
+@import 'states'; // 상태값 ( anwer )
+@import 'qna'; // 자주묻는 질문 (faq)
+
+@import 'reply'; // 답글 ( txt_post_wrap )
+
+@import 'policy'; // 약관 ( total_clause_bx, clause_list )
+
+@import 'login'; // 로그인 ( login-con, login-wrap, ... )
+
+@import 'sns-login'; // SNS 로그인 ( sns-login, bg--facebook, ... )
+
+// 888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+// 888           888     888
+// 888           888     888
+// 888           888     888
+// 888888 8888b. 88888b. 888 .d88b.
+// 888       "88b888 "88b888d8P  Y8b
+// 888   .d888888888  88888888888888
+// Y88b. 888  888888 d88P888Y8b.
+//  "Y888"Y88888888888P" 888 "Y8888
+
+///*비밀글 진입*/
+.pass-wrap {
+  margin-top: 60px;
+
+  .tit {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .mt_05 {
+    margin-top: 5px;
+  }
+
+  input {
+    padding: 0 10px;
+  }
+}
+
+.schedule_type_a {
+  table-layout: fixed;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: 1px solid #000;
+  word-break: break-all;
+
+  thead th {
+    color: #222;
+    padding: 8px 0;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    background: #f8f8f8;
+    font-weight: bold;
+
+    @include mdq-max(sm) {
+      font-size: 13px;
+    }
+  }
+
+  tr {
+    td,
+    th {
+      &:nth-child(1) {
+        &,
+        .date {
+          color: $red;
+        }
+      }
+
+      &:nth-child(7) {
+        &,
+        .date {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  tbody {
+    background: #fff;
+
+    td {
+      position: relative;
+      width: 14.258%;
+      font-weight: normal;
+      padding: 5px 5px;
+      height: 140px;
+
+      @include mdq-max(lg) {
+        height: 14vw;
+      }
+
+      vertical-align: top;
+      border: 1px solid #ccc;
+
+      .date {
+        display: block;
+        color: #222;
+        font-weight: bold;
+
+        &.red {
+          color: $red;
+        }
+
+        &.blue {
+          color: $blue;
+        }
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      &:hover {
+        // background: #edf3f7;
+
+        // .btn_tooltip_ajax {
+        //   color: #000;
+        //   text-decoration: underline !important;
+        // }
+      }
+
+      .cursor_default {
+        cursor: default;
+      }
+
+      @include mdq-max(sm) {
+        .meal_list li,
+        .kcal_t {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

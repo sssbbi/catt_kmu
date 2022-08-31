@@ -1,0 +1,45 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = 'policy';    
+    $P_dp2 = "1";
+    include "../include/meta.html";
+		?>
+  </head>
+  <body class="sub-body">
+    <!-- S : Header -->
+    <? include "../include/header.html" ?>
+    <!-- E : Header -->
+
+    <!-- S : Sub visual -->
+    <? include "../include/sub-visual.html" ?>
+    <!-- E : Sub visual -->
+
+    <!-- S : Main -->
+    <main class="main py-20" id="contents">
+      <!-- S : Section -->
+      <section class="section">
+        <div class="container">
+          <div class="sub-title">
+            <h1 class="sub-title__title">
+              <?=${nav_.$P_dp1._.$P_dp2}?>
+            </h1>
+          </div>
+
+          <div class="text-left text-keep text-gray-5 font-weight-light">
+            <!-- 개인정보 처리방침 -->
+            <? include "../policy/privacy-text.html" ?>
+            <!-- 개인정보 처리방침 -->
+          </div>
+        </div>
+      </section>
+      <!-- E : Section -->
+    </main>
+    <!-- E : Main -->
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+  </body>
+</html>

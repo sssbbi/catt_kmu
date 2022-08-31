@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+///*폼게시판*/
+.table-form-01 {
+	table-layout: fixed;
+	width: 100%;
+	border-top: 1px solid #000;
+	background: #fff;
+
+	.join_s_txt {
+		font-size: 0.9em;
+	}
+
+	&.type_c {
+		//좁은 형태
+		th,
+		td {
+			display: block;
+			border-bottom: 0;
+		}
+
+		td {
+			padding: 0;
+		}
+
+		th {
+			padding: 10px 0 5px;
+		}
+	}
+
+	.col_w {
+		width: 120px;
+
+		@include mdq-max(lg) {
+			width: 8em; //70px;
+		}
+	}
+
+	.e_mail_box_wrap {
+		max-width: 600px;
+	}
+
+	.num {
+		max-width: 500px;
+	}
+
+	tr {
+		th {
+			padding: 12px 10px;
+			text-align: left;
+			font-weight: 700;
+			color: #222;
+		}
+
+		th,
+		td {
+			border-bottom: 1px solid #ddd;
+		}
+	}
+
+	td {
+		padding: 12px 10px;
+
+		@include mdq-max(lg) {
+			padding: 10px 5px;
+		}
+	}
+
+	th label {
+		font-weight: bold;
+	}
+
+	.code {
+		padding: 0 10px;
+		display: inline-block;
+		vertical-align: middle;
+		height: $input-height;
+		line-height: $input-height;
+		background: #ddd;
+		color: #333;
+		font-weight: bold;
+		margin-right: 5px;
+
+		+ input {
+			max-width: 12em;
+			width: 100%;
+		}
+	}
+
+	.btn-type-01 {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	@include mdq-max(sm) {
+		colgroup {
+			display: none;
+		}
+		tr {
+			display: block;
+			padding: 12px 5px;
+			border-bottom: 1px solid $gray-d;
+
+			th,
+			td {
+				display: block;
+				border: 0;
+				padding: 0;
+				width: 100%;
+				text-align: left;
+			}
+			th {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	&.type_a {
+		display: block;
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 40px 20px;
+		border: 1px solid #ddd;
+		box-shadow: 0 0 10px rgba(#000, 0.1);
+		border-radius: 1rem;
+
+		colgroup {
+			display: none;
+		}
+
+		tbody {
+			display: block;
+			width: 100%;
+
+			tr {
+				display: block;
+				width: 100%;
+				padding: em(8) 0;
+
+				th {
+					display: block;
+					width: 100%;
+					border: 0;
+					padding: 0;
+					font-weight: 400;
+					font-size: em(14);
+				}
+
+				td {
+					display: block;
+					width: 100%;
+					border: 0;
+					padding: 0;
+					font-size: em(16);
+					margin-top: em(4);
+				}
+			}
+		}
+
+		input {
+			width: 100%;
+		}
+	}
+}
+
+.form_wrap {
+	&.type_c {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+}
